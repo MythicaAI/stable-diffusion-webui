@@ -1,8 +1,21 @@
 #Install pre-requisites
+sudo apt-update
 sudo apt install wget git python3 python3-venv libgl1 libglib2.0-0
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt install git-lfs
 git lfs install
+
+#create user and setup chroot 
+sudo apt update
+sudo apt install debootstrap schroot
+sudo adduser --disabled-password --gecos "" stablediffuser
+
+sudo mkdir /var/local/stablediff
+sudo chown stablediff:stablediff /var/local/stablediff
+
+sudo su - stablediff
+cd /var/local/stablediff
+
 
 #Clone required repos
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui.git
