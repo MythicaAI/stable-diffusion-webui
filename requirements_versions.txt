@@ -30,3 +30,5 @@ torchdiffeq==0.2.3
 torchsde==0.2.6
 transformers==4.30.2
 httpx==0.24.1
+protobuf>=5.29.6 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
